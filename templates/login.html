@@ -1,0 +1,45 @@
+{% include "base/head.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <div class='container-flex header d-flex justify-content-center border-bottom'>
+        <img src='{% static 'img/icon-title.png' %}'>
+    </div>
+
+    <div class='container content w-25'>
+        
+        <div class='cont-header d-flex justify-content-between border-bottom'>
+            <div>
+                <h3>Fazer login</h3>
+                <p>Usar sua conta INCI</p>
+            </div>
+
+            <img src='{% static 'img/icon.png' %}'>
+
+        </div>
+
+        <form>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <a>Esqueci a senha</a>
+
+            <p>Não está no seu computador? Use o modo visitante para fazer login com privacidade.</p>
+            <a>Saiba mais</a>
+
+            <button class='btn btn-primary w-75'>Entrar</button>
+        </form>
+        <a>Criar conta</a>
+    </div>
+
+    <div class='links d-flex justify-content-center'>
+        <a>Ajuda</a>
+        <a>Privacidade</a>
+        <a>Termos</a>
+    </div>
+</body>
+</html>

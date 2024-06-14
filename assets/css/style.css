@@ -1,0 +1,16 @@
+body{
+    background-color: #F8F9FA;
+}
+
+.content{
+    background-color: white;
+}
+
+.card-logo{
+    max-width: 50px;
+}
+
+.card{
+    max-width: 200px;
+    height: 200px;
+}
