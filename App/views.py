@@ -1,12 +1,10 @@
 from django.shortcuts import render
 from .models import *
 from .forms import *
-from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout
-# from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404
 
 def index(request):
     if request.user.is_authenticated:
@@ -25,6 +23,10 @@ def login_view(request):
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
 
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect('/')
+
 # ==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==
 
 def create_plataformas(request):
@@ -40,11 +42,25 @@ def create_ferramentas(request):
         if form.is_valid():
             form.save()
             return HttpResponse({'message': 'ok'})
+        
+# ==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==
+
+def edit_plataforma(request, pk):
+    plataforma = get_object_or_404(Plataforma, pk = pk)
+    if request.method == 'POST':
+        form = PlataformaForm(request.POST, instance = plataforma)
+        if form.is_valid():
+            form.save()
+            return HttpResponse({'message': 'ok'})
+    else:
+        form = PlataformaForm(instance = plataforma)
+    return render(request, 'form.html', {'form': form})
 
 # ==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==
 
 def get_plataformas(request):
-    plataformas = list(Plataforma.objects.all().values('nome', 'link'))
+    usuario = request.user
+    plataformas = list(Plataforma.objects.filter(usuarios = usuario).values('nome', 'link'))
     return JsonResponse(plataformas, safe = False)
 
 def get_ferramentas(request):
