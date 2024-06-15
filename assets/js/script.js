@@ -1,7 +1,7 @@
 /// <reference path="helpers_brasa.js" />
 'use strict';
 
-requisicaoGet('get-plataformas/', function(plataformas) {
+requisicaoGet('plataformas/', function(plataformas) {
     $(plataformas).each(function(index, plataforma) {
         $('#plataformas-ls').append(
             `<div class='col card d-flex align-items-center justify-content-center'>
@@ -13,12 +13,12 @@ requisicaoGet('get-plataformas/', function(plataformas) {
     })
 })
 
-requisicaoGet('get-ferramentas/', function(ferramentas) {
+requisicaoGet('ferramentas/', function(ferramentas) {
     $(ferramentas).each(function(index, ferramenta) {
         $('#ferramentas-ls').append(
-            `<div class='col'>
-                <img src='${base_url('static/img/' + ferramenta.nome)}.png'>
-                <p>${ferramenta.nome}</p>
+            `<div class='col card d-flex align-items-center justify-content-center'>
+                <img src='${base_url('static/img/' + ferramenta.nome)}.png' class="card-img-top card-logo">
+                <h6 class='card-subtitle'>${ferramenta.nome}</h6>
                 <a href='${ferramenta.link}'><button class='btn btn-light btn-outline-secondary'>Entrar</button></a>
             </div>`
         )

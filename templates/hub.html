@@ -7,14 +7,32 @@
     <title>Hub</title>
 </head>
 <body>
-    <h2>Nossas plataformas</h2>
-    <p>Escolha um ícone para entrar</p>
-    <div id='plataformas-ls' class='row'>
-    </div>
+    <nav class="navbar hub-nav navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'img/icon-title-w.png' %}" alt="Bootstrap" width="30" height="24">
+            </a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+            </form>
+        </div>
+    </nav>
 
-    <h2>Principais ferramentas</h2>
-    <p>Escolha um ícone para entrar</p>
-    <div id='ferramentas-ls'>
+    <div>
+        <div class='pf-cont'>
+            <h2>Nossas plataformas</h2>
+            <p>Escolha um ícone para entrar</p>
+            <div id='plataformas-ls' class='row row-cols-2 row-cols-lg-4'>
+            </div>
+        </div>
+
+        <div class='pf-cont'>
+            <h2>Principais ferramentas</h2>
+            <p>Escolha um ícone para entrar</p>
+            <div id='ferramentas-ls' class='row row-cols-1 row-cols-lg-4'>
+            </div>
+        </div>
     </div>
 </body>
 </html>

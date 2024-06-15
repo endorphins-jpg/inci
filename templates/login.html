@@ -23,7 +23,7 @@
 
         </div>
 
-        <form>
+        <form method='POST'>
             {% csrf_token %}
             {{ form.as_p }}
             <a>Esqueci a senha</a>
@@ -31,7 +31,7 @@
             <p>Não está no seu computador? Use o modo visitante para fazer login com privacidade.</p>
             <a>Saiba mais</a>
 
-            <button class='btn btn-primary w-75'>Entrar</button>
+            <input type='submit'>Entrar</input>
         </form>
         <a>Criar conta</a>
     </div>
