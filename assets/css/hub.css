@@ -30,32 +30,6 @@ body{
     color: var(--inci-blue-300)
 }
 
-.sidebar{
-    font-size: 16px;
-    text-decoration: none;
-    background-color: var(--inci-neutral-0);
-    margin-bottom: 0;
-}
-
-.sidebar a{
-    text-decoration: none;
-    color: var(--inci-neutral-900);
-    font-weight: 500;
-}
-
-.sidebar span{
-    font-size: 40px;
-    color: var(--inci-neutral-700);
-}
-
-.sidebar-link:hover{
-    background-color: var(--inci-neutral-100);
-}
-
-#config{
-    color: var(--inci-blue-700);
-}
-
-#logout{
-    color: red;
+.main{
+    transition: all 0.35s ease-in-out;
 }

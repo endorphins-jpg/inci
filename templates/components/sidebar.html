@@ -1,75 +1,70 @@
-<ul class='sidebar col col-2 py-3 px-4 h-100'>
-    <li class='sidebar-link row p-2 my-2'>
-        <a class="icon-link" href="#">
-            <span class="material-symbols-outlined">home</span>
-            Home
-        </a>
-    </li>
-    <li class='sidebar-link row p-2 my-2'>
-        <a class="icon-link" href="#">
-            <span class="material-symbols-outlined">group</span>
-            Alunos
-        </a>
-    </li>
-    <li class='sidebar-link row p-2 my-2'>
-        <a class="icon-link" href="#">
-            <span class="material-symbols-outlined">monetization_on</span>
-            Pagamentos
-        </a>
-    </li>
-    <li class='sidebar-link row p-2 my-2'>
-        <a class="icon-link" href="#">
-            <span class="material-symbols-outlined">low_density</span>
-            Cursos
-        </a>
-    </li>
-    <li class='sidebar-link row p-2 my-2'>
-        <a class="icon-link" href="#">
-            <span class="material-symbols-outlined">help</span>
-            Central de Ajuda
-        </a>
-    </li>
-    <li class='sidebar-link row p-2 my-2'>
-        <a class="icon-link" href="#">
-            <span class="material-symbols-outlined">workspace_premium</span>
-            Certificado impresso
-        </a>
-    </li>
+{% load static %}
 
-    <hr>
-    <p>Ferramentas</p>
+<head>
+    <script defer type="text/javascript" src="{% static 'js/sidebar.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
 
-    <li class='sidebar-link row p-2 my-2'>
-        <a class="icon-link" href="#">
-            <span class="material-symbols-outlined">tools_ladder</span>
-            Recursos
-        </a>
-    </li>
-    <li class='sidebar-link row p-2 my-2'>
-        <a class="icon-link" href="#">
-            <span class="material-symbols-outlined">query_stats</span>
-            Analytics
-        </a>
-    </li>
-    <li class='sidebar-link row p-2 my-2'>
-        <a class="icon-link" href="#">
-            <span class="material-symbols-outlined">campaign</span>
-            Whats Push
-        </a>
-    </li>
+<div class="wrapper">
+    <aside id="sidebar" class="p-4">
+        <div class="d-flex justify-content-center">
+            <button id="toggle-btn">
+                <i class="material-symbols-outlined">menu</i>
+            </button>
+        </div>
+        <ul class='sidebar-nav'>
+            <li class='sidebar-item'>
+                <a class="sidebar-link icon-link" href="#"><i class="material-symbols-outlined">home</i><span>Início</span></a>
+            </li>
+            <li class='sidebar-item'>
+                <a class="sidebar-link icon-link" href="#"><i class="material-symbols-outlined">group</i><span>Alunos</span></a>
+            </li>
+            <li class='sidebar-item'>
+                <a class="sidebar-link icon-link" href="#"><i class="material-symbols-outlined">monetization_on</i><span>Pagamentos</span></a>
+            </li>
+            <li class='sidebar-item'>
+                <a class="sidebar-link icon-link" href="#"><i class="material-symbols-outlined">low_density</i><span>Cursos</span></a>
+            </li>
+            <li class='sidebar-item'>
+                <a class="sidebar-link icon-link" href="#"><i class="material-symbols-outlined">help</i><span>Central de Ajuda</span></a>
+            </li>
+            <li class='sidebar-item'>
+                <a class="sidebar-link icon-link" href="#"><i class="material-symbols-outlined">workspace_premium</i><span>Certificado Impresso</span></a>
+            </li>
 
-    <hr>
+            <hr>
+            
+            <li class='sidebar-item'>
+                <a class="sidebar-link icon-link" href="#">
+                    <i class="material-symbols-outlined">tools_ladder</i><span>Recursos</span>
+                </a>
+            </li>
 
-    <li class='sidebar-link row p-2 my-2'>
-        <a id='config' class="icon-link" href="#">
-            <span id='config' class="material-symbols-outlined">settings</span>
-            Configuração
-        </a>
-    </li>
-    <li class='sidebar-link row p-2 my-2'>
-        <a class="icon-link" id='logout' href="{% url 'logout' %}">
-            <span id='logout' class="material-symbols-outlined">mode_off_on</span>
-            Sair
-        </a>
-    </li>
-</ul>
+            <li class='sidebar-item'>
+                <a class="sidebar-link icon-link" href="#">
+                    <i class="material-symbols-outlined">query_stats</i><span>Analytics</span>
+                </a>
+            </li>
+            
+            <li class='sidebar-item'>
+                <a class="sidebar-link icon-link" href="#">
+                    <i class="material-symbols-outlined">campaign</i><span>Whats Push</span>
+                </a>
+            </li>
+            
+            
+
+            <hr>
+
+            <li class='sidebar-item'>
+                <a id='config' class="sidebar-link icon-link" href="#"><i id='config' class="material-symbols-outlined">settings</i><span>Configuração</span></a>
+            </li>
+            <li class='sidebar-item'>
+                <a id='logout' class="sidebar-link icon-link" href="{% url 'logout' %}"><i id='logout' class="material-symbols-outlined">mode_off_on</i><span>Sair</span></a>
+            </li>
+
+
+        </ul>
+    </aside>
+</div>
