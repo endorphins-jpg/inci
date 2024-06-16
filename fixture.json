@@ -1,0 +1,92 @@
+[
+    {
+        "model": "App.plataforma",
+        "pk": 1,
+        "fields": {
+            "nome": "SóEducador",
+            "link": "https://soeducador.com.br/",
+            "usuarios": []
+        }
+    }, 
+    {
+        "model": "App.plataforma",
+        "pk": 2,
+        "fields": {
+            "nome": "Estetus",
+            "link": "https://estetus.com.br/",
+            "usuarios": []
+        }
+    },
+    {
+        "model": "App.plataforma",
+        "pk": 3,
+        "fields": {
+            "nome": "Eduhot", 
+            "link": "https://eduhot.com.br/",
+            "usuarios": [0]
+        }
+    }, 
+    {
+        "model": "App.plataforma",
+        "pk": 4,
+        "fields": {
+            "nome": "Edooker",
+            "link": "https://edooker.com.br/",
+            "usuarios": []
+        }
+    }, 
+    {
+        "model": "App.plataforma",
+        "pk": 5,
+        "fields": {
+            "nome": "EducDay",
+            "link": "https://educday.com.br/",
+            "usuarios": []
+        }
+    }, 
+    {
+        "model": "App.plataforma",
+        "pk": 6,
+        "fields": {
+            "nome": "Zamply",
+            "link": "https://www.instagram.com/zamply.io/",
+            "usuarios": []
+        }
+    }, 
+    {
+        "model": "App.ferramenta",
+        "pk": 1,
+        "fields": {
+            "nome": "E-Mail",
+            "link": "https://mail.google.com/",
+            "usuarios": []
+        }
+    }, 
+    {
+        "model": "App.ferramenta",
+        "pk": 2,
+        "fields": {
+            "nome": "Jira",
+            "link": "https://www.atlassian.com/br/software/jira",
+            "usuarios": []
+        }
+    }, 
+    {
+        "model": "App.ferramenta",
+        "pk": 3,
+        "fields": {
+            "nome": "Asana",
+            "link": "https://asana.com/pt",
+            "usuarios": []
+        }
+    }, 
+    {
+        "model": "App.ferramenta",
+        "pk": 4,
+        "fields": {
+            "nome": "Drive",
+            "link": "https://drive.google.com/", 
+            "usuarios": []
+        }
+    }
+]

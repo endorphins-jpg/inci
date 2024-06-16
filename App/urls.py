@@ -7,11 +7,16 @@ urlpatterns = [
     path('login/', views.login_view, name = 'login'),
     path('logout/', views.logout_view, name = 'logout'),
 
-    path('create_ferramenta/', views.create_ferramentas, name = 'create_ferramentas'),
-    path('create_plataforma/', views.create_plataformas, name = 'create_plataformas'),
+    # ==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==
 
-    path('edit_plataforma/<int:pk>/', views.edit_plataforma, name = 'edit_plataforma'),
-    
     path('plataformas/', views.get_plataformas, name = 'get_plataformas'),
-    path('ferramentas/', views.get_ferramentas, name = 'get_ferramentas')
+    path('ferramentas/', views.get_ferramentas, name = 'get_ferramentas'),
+
+    # ==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==
+
+    path('api/create-plataforma/', views.create_plataformas, name = 'create_plataformas'),
+    path('api/create-ferramenta/', views.create_ferramentas, name = 'create_ferramentas'),
+
+    path('api/user-plataforma/', views.link_user_plat, name = 'link_plataforma'),
+    path('api/user-ferramenta/', views.link_user_ferr, name = 'link_ferramenta'),
     ]
