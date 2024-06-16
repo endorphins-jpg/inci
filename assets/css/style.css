@@ -61,6 +61,12 @@ body{
     font-family: "Rethink Sans", sans-serif;
 }
 
+.btn-inci-neutral{
+    background-color: var(--inci-neutral-0);
+    color: var(--inci-neutral-900);
+    border-color: var(--bs-border-color-translucent);
+}
+
 .btn-inci-blue{
     background-color: var(--primary-inci-600);
     color: white;
@@ -81,7 +87,7 @@ body{
     background-color: var(--inci-secondary-400);
 }
 
-.btn-inci-sec, .btn-inci-blue{
+.btn-inci-sec, .btn-inci-blue, .btn-inci-neutral{
     font-weight: 500;
     padding: 10px;
     padding-inline: 20px;

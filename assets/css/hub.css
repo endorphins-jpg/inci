@@ -1,12 +1,61 @@
+body{
+    background-color: var(--inci-neutral-100);
+}
+
 .card-logo{
-    max-width: 64px;
+    max-height: 100px;
+    object-fit: contain
 }
 
 .card{
-    max-width: 200px;
-    height: 200px;
+    max-width: 350px;
+    height: 250px;
+}
+
+.card-subtitle{
+    color: var(--inci-neutral-700);
 }
 
 .hub-nav{
     background-color: #0C228F;
+    color: white;
+}
+
+.nav-item a{
+    color: white;
+    text-decoration: none;
+}
+
+.nav-item span{
+    color: var(--inci-blue-300)
+}
+
+.sidebar{
+    font-size: 16px;
+    text-decoration: none;
+    background-color: var(--inci-neutral-0);
+    margin-bottom: 0;
+}
+
+.sidebar a{
+    text-decoration: none;
+    color: var(--inci-neutral-900);
+    font-weight: 500;
+}
+
+.sidebar span{
+    font-size: 40px;
+    color: var(--inci-neutral-700);
+}
+
+.sidebar-link:hover{
+    background-color: var(--inci-neutral-100);
+}
+
+#config{
+    color: var(--inci-blue-700);
+}
+
+#logout{
+    color: red;
 }
