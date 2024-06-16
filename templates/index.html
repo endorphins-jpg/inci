@@ -4,9 +4,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Index</title>
+    <title>INCI Brasil</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
 <body>
-    <h1>Oi</h1>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'img/logos/icon-title.png' %}" alt="INCI">
+            </a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Nossos Serviços</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Quem somos?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Nosso time</a>
+                </li>
+            </ul>
+            
+            <div class='nav-buttons'>
+                <a href='#'><button class='btn btn-inci-blue'>Trabalhe conosco</button></a>
+                <a href='{% url 'login' %}'><button class='btn btn-inci-sec'>Entrar</button></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class='row d-flex justify-content-center align-items-center mt-5'>
+        <div class='container-fluid col-5'>
+            <h2>Preparando Pessoas <br> <b>para o Futuro</b></h2>
+            <h3 class="fs-4">Soluções educacionais para a formação e desenvolvimento de pessoas e instituições.</h3>
+            <div class="d-flex mt-2 mb-2">
+                <input class="form-control me-2 w-75" placeholder="seuemail@email.com">
+                <button class="btn btn-inci-blue">Entrar em contato</button>
+            </div>
+            <div class="d-flex align-items-center">
+                <img src='{% static 'img/pic-frame.png' %}' height="70px" class="me-2">
+                <p><b>+11,8mi😯🤯</b><br> de Alcance</p>
+            </div>
+        </div>
+
+        <div class='container-fluid col-4'>
+            <img class="img-fluid" src='{% static 'img/hub-frame.png' %}'>
+        </div>
+    </div>
 </body>
 </html>
