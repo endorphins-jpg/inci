@@ -12,5 +12,6 @@ urlpatterns = [
 
     path('edit_plataforma/<int:pk>/', views.edit_plataforma, name = 'edit_plataforma'),
     
-    path('user-access/', views.get_pf, name = 'get_pf'),
+    path('plataformas/', views.get_plataformas, name = 'get_plataformas'),
+    path('ferramentas/', views.get_ferramentas, name = 'get_ferramentas')
     ]
