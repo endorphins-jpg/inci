@@ -68,8 +68,6 @@ a.sidebar-link{
     padding: 0.5rem;
 }
 
-#sidebar:has(.expand) .sidebar-item
-
 #config{
     color: var(--inci-blue-700);
 }

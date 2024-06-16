@@ -1,7 +1,10 @@
 /// <reference path="helpers_brasa.js" />
 'use strict';
 
-requisicaoGet('plataformas/', function(plataformas) {
+requisicaoGet('user-access/', function(access) {
+    let plataformas = access.plataformas
+    let ferramentas = access.ferramentas
+
     $(plataformas).each(function(index, plataforma) {
         $('#plataformas-ls').append(
             `<div class='card d-flex mb-3 me-3 justify-content-center p-3'>
@@ -15,9 +18,7 @@ requisicaoGet('plataformas/', function(plataformas) {
             </div>`
         )
     })
-})
 
-requisicaoGet('ferramentas/', function(ferramentas) {
     $(ferramentas).each(function(index, ferramenta) {
         $('#ferramentas-ls').append(
             `<div class='card d-flex mb-3 me-3 justify-content-center p-3'>

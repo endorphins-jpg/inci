@@ -58,11 +58,16 @@ def edit_plataforma(request, pk):
 
 # ==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==
 
-def get_plataformas(request):
-    usuario = request.user
-    plataformas = list(Plataforma.objects.filter(usuarios = usuario).values('nome', 'link'))
-    return JsonResponse(plataformas, safe = False)
+def get_pf(request):
+    user = request.user
 
-def get_ferramentas(request):
-    ferramentas = list(Ferramenta.objects.all().values('nome', 'link'))
-    return JsonResponse(ferramentas, safe = False)
+    plataformas = list(Plataforma.objects.filter(usuarios = user).values('nome', 'link'))
+    ferramentas = list(Ferramenta.objects.filter(usuarios = user).values('nome', 'link'))
+
+    res = {
+        'plataformas': plataformas,
+        'ferramentas': ferramentas
+    }
+
+    print(res)
+    return JsonResponse(res, safe = False)
