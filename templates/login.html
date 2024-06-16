@@ -5,41 +5,56 @@
 <html>
 <head>
     <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
 <body>
-    <div class='container-flex header d-flex justify-content-center border-bottom'>
-        <img src='{% static 'img/icon-title.png' %}'>
-    </div>
+    <nav class="navbar py-4 justify-content-center border-bottom position-fixed w-100">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'img/logos/icon-title.png' %}" alt="INCI" height="40">
+        </a>
+    </nav>
 
-    <div class='container content w-25'>
-        
-        <div class='cont-header d-flex justify-content-between border-bottom'>
-            <div>
-                <h3>Fazer login</h3>
-                <p>Usar sua conta INCI</p>
+    <div class="d-flex flex-column justify-content-center align-items-center h-100">
+        <div class='container content col-10 col-lg-3 p-5 mb-4 border'>
+            <div class='cont-header d-flex justify-content-between align-items-center border-bottom mb-4 pb-4'>
+                <div>
+                    <h4>Fazer login</h4>
+                    <p>Use sua conta INCI</p>
+                </div>
+                <img src='{% static 'img/logos/icon.png' %}' height="50">
             </div>
+            
+            <form method='POST'>
+                <div>
+                    {% csrf_token %}
+                    <div class="mb-2">
+                        <label class="form-label" for="id_username">E-mail ou telefone</label>
+                        <input class="form-control" type="text" name="username" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+                    </div>
+                    <div>
+                        <label class="form-label" for="id_password">Senha</label>
+                        <input class="form-control" type="password" name="password" autocomplete="current-password" required="" id="id_password" aria-describedby="passRec">
+                        <div id="passRec" class="form-text"><a href='#'>Esqueci a senha</a></div>
+                    </div>
+                </div>
 
-            <img src='{% static 'img/icon.png' %}'>
+                <div class='mt-4 login-help'>
+                    <p class="help-text">Não está no seu computador? Use o modo visitante para fazer login com privacidade.</p>
+                    <a href='#'>Saiba mais</a>
+                </div>
 
+                <div class='auth-btn d-flex flex-column align-items-center'>
+                    <input class='btn btn-inci-blue w-100 my-1' type='submit'>
+                    <a href='#'>Criar conta</a>
+                </div>
+            </form>
         </div>
 
-        <form method='POST'>
-            {% csrf_token %}
-            {{ form.as_p }}
-            <a>Esqueci a senha</a>
-
-            <p>Não está no seu computador? Use o modo visitante para fazer login com privacidade.</p>
-            <a>Saiba mais</a>
-
-            <input type='submit'>Entrar</input>
-        </form>
-        <a>Criar conta</a>
-    </div>
-
-    <div class='links d-flex justify-content-center'>
-        <a>Ajuda</a>
-        <a>Privacidade</a>
-        <a>Termos</a>
+        <div class='container footer w-25 d-flex justify-content-evenly'>
+            <a href='#'>Ajuda</a>
+            <a href='#'>Privacidade</a>
+            <a href='#'>Termos</a>
+        </div>
     </div>
 </body>
 </html>

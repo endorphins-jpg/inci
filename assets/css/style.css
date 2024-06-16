@@ -80,3 +80,9 @@ body{
     color: black;
     background-color: var(--inci-secondary-400);
 }
+
+.btn-inci-sec, .btn-inci-blue{
+    font-weight: 500;
+    padding: 10px;
+    padding-inline: 20px;
+}

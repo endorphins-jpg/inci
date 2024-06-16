@@ -1,19 +1,23 @@
-/* .content{
+body{
+    background-color: var(--inci-neutral-100);
+}
+
+.content{
     background-color: var(--inci-neutral-0);
-} */
-
-
-/* hub */
-
-/* .card-logo{
-    max-width: 64px;
+    border-radius: 10px;
 }
 
-.card{
-    max-width: 200px;
-    height: 200px;
+#passRec a, .footer a{
+    text-decoration: none;
+    color: var(--inci-neutral-900);
 }
 
-.hub-nav{
-    background-color: #0C228F;
-} */
+.auth-btn a{
+    text-decoration: none;
+    color: var(--inci-blue-600);
+    font-weight: 500;
+}
+
+.login-help p, .login-help a{
+    font-size: 14px;
+}
