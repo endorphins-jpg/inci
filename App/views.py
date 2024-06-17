@@ -30,22 +30,6 @@ def logout_view(request):
 
 # ==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==
 
-def create_plataformas(request):
-    if request.method == 'POST':
-        form = PlataformaForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponse({'message': 'ok'})
-
-def create_ferramentas(request):
-    if request.method == 'POST':
-        form = FerramentaForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponse({'message': 'ok'})
-
-# ==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==
-
 def get_plataformas(request):
     usuario = request.user
     plataformas = list(Plataforma.objects.filter(usuarios = usuario).values('nome', 'link'))
@@ -55,6 +39,8 @@ def get_ferramentas(request):
     usuario = request.user
     ferramentas = list(Ferramenta.objects.filter(usuarios = usuario).values('nome', 'link'))
     return JsonResponse(ferramentas, safe = False)
+
+# ==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==-=-==
 
 @csrf_exempt
 def link_user_plat(request):
@@ -68,7 +54,7 @@ def link_user_plat(request):
         plataforma.usuarios.add(user)
         plataforma.save()
 
-        return JsonResponse({'message': 'Plataforma adicionada ao usuário com sucesso.'}, status=201)
+        return JsonResponse({'message': 'Plataforma adicionada ao usuario com sucesso.'}, status=201)
 
     except Exception as e:
         return JsonResponse({'error': str(e)}, status = 400)
@@ -85,7 +71,7 @@ def link_user_ferr(request):
         ferramenta.usuarios.add(user) 
         ferramenta.save()
 
-        return JsonResponse({'message': 'Ferramenta adicionada ao usuário com sucesso.'}, status=201)
+        return JsonResponse({'message': 'Ferramenta adicionada ao usuario com sucesso.'}, status=201)
 
     except Exception as e:
         return JsonResponse({'error': str(e)}, status = 400)
