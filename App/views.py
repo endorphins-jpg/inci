@@ -6,12 +6,14 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
 
 def index(request):
-    if request.user.is_authenticated:
-        return render(request, 'hub.html')
-    else:
-        return render(request, 'index.html')
+    return render(request, 'index.html')
+
+@login_required
+def hub(request):
+    return render(request, 'hub.html')
 
 def login_view(request): 
     if request.method == 'POST':
@@ -19,7 +21,7 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/hub/')
     else:
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})

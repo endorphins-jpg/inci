@@ -24,7 +24,12 @@ li{
     background-color: transparent;
     cursor: pointer;
     border: none;
-    padding: 0.5rem
+    padding: 0.5rem;
+    transform: rotate(-90deg);
+}
+
+.rotate{
+    transform: rotate(90deg) !important;
 }
 
 #toggle-btn i{

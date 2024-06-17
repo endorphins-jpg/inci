@@ -3,13 +3,13 @@ body{
 }
 
 .card-logo{
-    max-height: 100px;
+    max-height: 75px;
     object-fit: contain
 }
 
 .card{
     max-width: 350px;
-    height: 250px;
+    height: 235px;
 }
 
 .card-subtitle{
@@ -32,4 +32,8 @@ body{
 
 .main{
     transition: all 0.35s ease-in-out;
+}
+
+h2{
+    color: var(--inci-blue-700);
 }

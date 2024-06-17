@@ -8,16 +8,16 @@
     <script defer type="text/javascript" src="{% static 'js/user_access.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/hub.css' %}">
 </head>
-<body>
+<body'>
     {% include "components/navbar.html" %}
 
-    <div class="d-flex flex-row h-100">
+    <div class="d-flex flex-row" style='height: 100vh'>
         {% include "components/sidebar.html" %}
 
-        <div class='main col col-10 container-flex px-4'>
+        <div class='main col container-flex px-4'>
             <div class='pf-cont mt-3'>
                 <h2>Nossas plataformas</h2>
-                <p>Escolha um ícone para entrar</p>
+                <p class='text-secondary'>Escolha um ícone para entrar</p>
                 <div id='plataformas-ls' class='row mt-3 d-flex row-cols-2 row-cols-lg-4'>
                 </div>
             </div>
@@ -26,7 +26,7 @@
 
             <div class='pf-cont mt-3'>
                 <h2>Principais ferramentas</h2>
-                <p>Escolha um ícone para entrar</p>
+                <p class='text-secondary'>Escolha um ícone para entrar</p>
                 <div id='ferramentas-ls' class='row mt-3 d-flex row-cols-2 row-cols-lg-4'>
                 </div>
             </div>
